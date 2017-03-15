@@ -1,0 +1,24 @@
+<serviceGroup>
+
+<service name="MyWebservice">    
+    <description>    
+        MyWebservice 项目 
+    </description>    
+    <parameter name="ServiceClass">    
+        com.service.MyWebservice
+    </parameter>    
+    <operation name="getName">    
+        <messageReceiver class="org.apache.axis2.rpc.receivers.RPCMessageReceiver" />    
+    </operation>    
+    <operation name="print">    
+<!-- 这里要注意，当没有返回值时才用   
+org.apache.axis2.rpc.receivers.RPCInOnlyMessageReceiver，没有参数还是用RPCMessageReceiver-->  
+        <messageReceiver class="org.apache.axis2.rpc.receivers.RPCInOnlyMessageReceiver" />    
+    </operation>    
+    <operation name="login">    
+        <messageReceiver class="org.apache.axis2.rpc.receivers.RPCMessageReceiver" />    
+    </operation>    
+</service> 
+
+</serviceGroup>
+
